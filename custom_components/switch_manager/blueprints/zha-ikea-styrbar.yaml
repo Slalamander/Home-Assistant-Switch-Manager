@@ -1,0 +1,83 @@
+name: Ikea Styrbar ZHA
+service: ZHA
+event_type: zha_event
+identifier_key: device_id
+buttons:
+  ## Not sure why the buttons are back to front and illogical by their numbers??
+  - x: 247
+    y: 61
+    width: 50
+    actions:
+      - title: press
+        conditions:
+          - key: command
+            value: 'on'
+      - title: hold
+        conditions:
+          - key: command
+            value: move_with_on_off
+      - title: hold_release
+        conditions:
+          - key: command
+            value: stop_with_on_off
+
+  - x: 442
+    y: 248
+    width: 50
+    actions:
+      - title: press
+        conditions:
+          - key: command
+            value: press
+          - key: params.param1
+            value: '256'
+      - title: hold
+        conditions:
+          - key: command
+            value: hold
+          - key: params.param1
+            value: '3328'
+      - title: hold (released)
+        conditions:
+          - key: command
+            value: release
+          - key: params.param1
+            value: '-7258'
+  - x: 245
+    y: 434
+    width: 50
+    actions:
+      - title: press
+        conditions:
+          - key: command
+            value: 'off'
+      - title: hold
+        conditions:
+          - key: command
+            value: move
+      - title: hold_release
+        conditions:
+          - key: command
+            value: stop_with_on_off
+  - x: 52
+    y: 248
+    width: 50
+    actions:
+      - title: press
+        conditions:
+          - key: command
+            value: press
+          - key: params.param1
+            value: '257'
+      - title: hold
+        conditions:
+          - key: command
+            value: hold
+          - key: params.param1
+            value: '3329'
+      - title: hold (released)
+        conditions:
+          - key: command
+            value: release
+          - key: params.param1
+            value: '1675'
